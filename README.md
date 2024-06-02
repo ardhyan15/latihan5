@@ -16,7 +16,8 @@ INSERT INTO Dosen VALUES
 ('DS004', 'Ratna Kumala'),
 ('DS005', 'Vika Prasetyo');
 ```
-![](Foto/tabledosen.png)
+![image](https://github.com/ardhyan15/latihan5/assets/98029961/d903cb54-d55a-4341-bc7b-7b985a6a0ec2)
+
 
 * Membuat Table Mahasiswa
 ```sql
@@ -50,7 +51,8 @@ INSERT INTO mahasiswa VALUES
 (1956789, 'Dadi Martani', 'L', '2001-08-29', NULL, 'Bekasi', NULL, NULL, 'DS005'),
 (1967890, 'Bayu Laksono', 'L', '1999-07-22', NULL, 'Cikarang', NULL, NULL, 'DS004');
 ```
-![](Foto/tablemahasiswa.png)
+![image](https://github.com/ardhyan15/latihan5/assets/98029961/7757faeb-ec90-477c-a742-f4e842eba638)
+
 
 * Membuat Table MataKuliah
 ```sql
@@ -72,7 +74,8 @@ INSERT INTO MataKuliah VALUES
 ('MK007', 'Struktur Data', 3),
 ('MK008', 'Arsitektur Komputer', 2);
 ```
-![](Foto/tablematakuliah.png)
+![image](https://github.com/ardhyan15/latihan5/assets/98029961/cf4bdca4-3173-42ae-a95b-42a7b8e12bbb)
+
 
 * Membuat Table KRSMahasiswa
 ```sql
@@ -98,7 +101,8 @@ INSERT INTO KRSMahasiswa VALUES
 (1823456, 'MK007', 'DS005', 3, NULL),
 (1823456, 'MK008', 'DS005', 3, NULL);
 ```
-![](Foto/tablekrsmahasiswa.png)
+![image](https://github.com/ardhyan15/latihan5/assets/98029961/e5bdafd2-41a3-4d33-b487-6804426c5231)
+
 
 * Membuat Table ke Dalam Table JadwalMengajar
 ```sql
@@ -125,7 +129,8 @@ INSERT INTO JadwalMengajar VALUES
 ('MK007', 'DS005', 'Rabu', '08:00:00', '102'),
 ('MK008', 'DS005', 'Kamis', '13:00:00', '201');
 ```
-![](Foto/tablejadwalmengajar.png)
+![image](https://github.com/ardhyan15/latihan5/assets/98029961/a35978f7-ecc1-4742-9c4f-91b7b2b4c971)
+
 
 # Praktikum
 - Lakukan join table Mahasiswa dan Dosen
@@ -143,14 +148,16 @@ dosen.nama AS "Dosen Pengampu"
 FROM mahasiswa
 JOIN dosen ON mahasiswa.kd_ds = dosen.kd_ds;
 ```
-![](Foto/1.png)
+![image](https://github.com/ardhyan15/latihan5/assets/98029961/abd051b3-63a0-42f3-9997-26706741f93e)
+
 
 - Lakukan join table Matakuliah dan Dosen
 ```sql
 SELECT * FROM Matakuliah
 JOIN dosen ON matakuliah.kd_ds = dosen.kd_ds;
 ```
-![](Foto/2.png)
+![image](https://github.com/ardhyan15/latihan5/assets/98029961/c00ed753-3765-4e74-a55e-f8788cafb106)
+
 
 ``Note: Terjadi error karena tidak ada relasi antara kedua tabel.
 tabel dosen memiliki kolom kd_ds sementara tabel matakuliah tidak.
@@ -173,7 +180,8 @@ FROM matakuliah
 JOIN jadwalmengajar ON matakuliah.kd_mk = jadwalmengajar.kd_mk
 JOIN dosen ON jadwalmengajar.kd_ds = dosen.kd_ds;
 ```
-![](Foto/3.png)
+![image](https://github.com/ardhyan15/latihan5/assets/98029961/2cedd93e-94f8-460b-9b40-79abec6d5396)
+
 - Lakukan join table KRSMahasiswa, Mahasiswa, Matakuliah dan Dosen
 ```sql
 SELECT 
@@ -188,7 +196,8 @@ JOIN mahasiswa ON krsmahasiswa.nim = mahasiswa.nim
 JOIN matakuliah ON krsmahasiswa.kd_mk = matakuliah.kd_mk
 JOIN dosen ON krsmahasiswa.kd_ds = dosen.kd_ds;
 ```
-![](Foto/4.png)
+![image](https://github.com/ardhyan15/latihan5/assets/98029961/dfe35a90-63d9-475e-afed-6743a9df768e)
+
 
 ``
 Note : Adanya data yang redudansi data mahasiswa bernama 'Dina Marlina' biasanya terjadi karena Data Duplikat, jika tabel yang di-join memiliki banyak baris yang cocok, hasilnya akan menampilkan setiap kombinasi dari baris-baris tersebut, yang dapat menyebabkan data yang sama muncul berulang kali.
@@ -205,7 +214,8 @@ dosen.nama AS "Dosen Pengampu"
 FROM mahasiswa
 JOIN dosen ON mahasiswa.kd_ds = dosen.kd_ds;
 ```
-![](Foto/1.png)
+![image](https://github.com/ardhyan15/latihan5/assets/98029961/f0886c0b-58cb-48d1-b34b-8bb1164ad67a)
+
 
 * LEFT JOIN Table Mahasiswa dan Dosen
 ```sql
@@ -217,7 +227,8 @@ dosen.nama AS 'Dosen PA'
 FROM Mahasiswa
 LEFT JOIN Dosen ON Dosen.kd_ds=Mahasiswa.kd_ds;
 ```
-![](Foto/5.png)
+![image](https://github.com/ardhyan15/latihan5/assets/98029961/79676325-0f58-4513-b962-a47c6efc2c77)
+
 
 * JOIN Table JadwalMengajar, Dosen, dan Matakuliah
 ```sql
@@ -230,7 +241,8 @@ FROM jadwalMengajar
 JOIN dosen ON jadwalMengajar.kd_ds = dosen.kd_ds
 JOIN matakuliah ON jadwalMengajar.kd_mk = matakuliah.kd_mk;
 ```
-![](Foto/6.png)
+![image](https://github.com/ardhyan15/latihan5/assets/98029961/3fb24518-a909-4033-8bd4-3b6704aad760)
+
 
 * JOIN Table JadwalMengajar, Dosen, dan Matakuliah
 ```sql
@@ -246,6 +258,7 @@ JOIN mahasiswa ON krsmahasiswa.nim = mahasiswa.nim
 JOIN matakuliah ON krsmahasiswa.kd_mk = matakuliah.kd_mk
 JOIN dosen ON krsmahasiswa.kd_ds = dosen.kd_ds;
 ```
-![](Foto/4.png)
+![image](https://github.com/ardhyan15/latihan5/assets/98029961/5472c42a-7d80-4e58-a51d-f5f9a3ccfc3b)
+
 
 
